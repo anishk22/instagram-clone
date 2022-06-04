@@ -6,7 +6,7 @@ export const POSTS = [
         user: USERS[0].user,
         likes: 56852,
         caption: 'Whats your favorite one growing up?',
-        profilePicture: USERS[0].image,
+        profile_picture: USERS[0].image,
         comments: [
             {
                 user: 'dylan452',
@@ -23,7 +23,7 @@ export const POSTS = [
         user: USERS[1].user,
         likes: 1829183,
         caption: 'b&b out now',
-        profilePicture: USERS[1].image,
+        profile_picture: USERS[1].image,
         comments: [
             {
                 user: 'dougp09',
@@ -40,7 +40,7 @@ export const POSTS = [
         user: USERS[2].user,
         likes: 291823,
         caption: 'Superbowl Picks?',
-        profilePicture: USERS[2].image,
+        profile_picture: USERS[2].image,
         comments: [
             {
                 user: 'dougp09',
@@ -65,7 +65,7 @@ export const POSTS = [
         user: USERS[3].user,
         likes: 1291823,
         caption: 'iPhone.',
-        profilePicture: USERS[3].image,
+        profile_picture: USERS[3].image,
         comments: [
             {
                 user: 'bobbyh',
@@ -82,7 +82,7 @@ export const POSTS = [
         user: USERS[4].user,
         likes: 1291823,
         caption: 'North Campus on a Wednesday ☀️',
-        profilePicture: USERS[4].image,
+        profile_picture: USERS[4].image,
         comments: [
             {
                 user: 'bobbyh',
