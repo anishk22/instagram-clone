@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'  
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'  
 import { Divider } from 'react-native-elements'
 
 const Post = ({ post }) => {
@@ -11,6 +11,9 @@ const Post = ({ post }) => {
         />
         <PostHeader post={post} />
         <PostImage post={post} />
+        <View style={{ marginHorizontal: 15, marginTop: 10 }}>
+            <PostFooter />
+        </View>
     </View>
   )
 }
@@ -25,7 +28,7 @@ const PostHeader = ({ post }) => (
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image 
                 source={{ uri: post.profile_picture}}
-                style={styles.post}
+                style={styles.header}
             />
             <Text style ={{ 
                 color: 'white',
@@ -61,14 +64,89 @@ const PostImage = ({ post }) => (
     </View>
 )
 
+const PostFooter = ({ post }) => (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={styles.leftFooterIconsContainer}>
+            <Icon 
+                imgStyle={styles.footerIcon} 
+                imgUrl={postFooterIcons[0].imageUrl} 
+            />
+
+            <Icon 
+                imgStyle={styles.footerIcon} 
+                imgUrl={postFooterIcons[1].imageUrl} 
+            />
+
+            <Icon 
+                imgStyle={[styles.footerIcon, styles.shareIcon]} 
+                imgUrl={postFooterIcons[2].imageUrl} 
+            />
+        </View>
+
+
+        <View>
+            <Icon 
+                imgStyle={styles.footerIcon}
+                imgUrl={postFooterIcons[3].imageUrl}
+            />
+        </View>
+    </View>
+)
+
+const Icon = ({ imgStyle, imgUrl }) => (
+    <TouchableOpacity>
+        <Image style={imgStyle} source={{ uri: imgUrl }} />
+    </TouchableOpacity>
+)
+
+const postFooterIcons = [
+    {
+        name: 'Like',
+        imageUrl:
+            'https://img.icons8.com/fluency-systems-regular/60/ffffff/like--v1.png',
+        likedImageUrl: 'https://img.icons8.com/ios-glyphs/90/fa314a/like--v2.gif',
+    },
+    {
+        name: 'Comment',
+        imageUrl:
+            'https://img.icons8.com/material-outlined/60/ffffff/speech-bubble--v1.png',
+    },
+    {
+        name: 'Share',
+        imageUrl:
+            'https://img.icons8.com/fluency-systems-regular/60/ffffff/sent.png',
+    },
+    {
+        name: 'Save',
+        imageUrl:
+            'https://img.icons8.com/fluency-systems-regular/60/ffffff/bookmark-ribbon--v1.png',
+    },
+]
+
 const styles = StyleSheet.create({
-    post: {
+    header: {
         width: 35,
         height: 35,
         borderRadius: 50,
         marginLeft: 6,
         borderWidth: 1.6,
         borderColor: '#d62996'
+    },
+
+    footerIcon: {
+        width: 33,
+        height: 33,
+    },
+
+    leftFooterIconsContainer: {
+        flexDirection: 'row',
+        width: '32%',
+        justifyContent: 'space-between',
+    },
+
+    shareIcon: {
+        transform: [{ rotate: '320deg'}],
+        marginTop: -3,
     },
 }) 
 
