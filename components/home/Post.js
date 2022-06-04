@@ -10,6 +10,7 @@ const Post = ({ post }) => {
             orientation='vertical'
         />
         <PostHeader post={post} />
+        <PostImage post={post} />
     </View>
   )
 }
@@ -29,7 +30,7 @@ const PostHeader = ({ post }) => (
             <Text style ={{ 
                 color: 'white',
                 marginLeft: 5,
-                fontWeight: 700,
+                fontWeight: '700',
             }}> 
                 {post.user} 
             </Text>
@@ -43,6 +44,22 @@ const PostHeader = ({ post }) => (
         </Text>
     </View>
 )  
+
+const PostImage = ({ post }) => (
+    <View
+        style={{
+            width: '100%',
+            height: 450,
+        }}
+    >
+        <Image source={{ uri: post.imageUrl}}
+            style={{
+                height: '100%',
+                resizeMode: 'cover',
+            }}
+        />
+    </View>
+)
 
 const styles = StyleSheet.create({
     post: {

@@ -19,9 +19,9 @@ export const POSTS = [
         ],
     },
     {
-        imageUrl: 'https://static.wikia.nocookie.net/inreallife/images/a/a1/Post_Malone_-_Beerbongs_%26_Bentleys.jpeg/revision/latest?cb=20180915054313',
+        imageUrl: 'https://thehowler.org/wp-content/uploads/2019/01/BB.jpg',
         user: USERS[1].user,
-        likes: 1829183,
+        likes: 1429183,
         caption: 'b&b out now',
         profile_picture: USERS[1].image,
         comments: [
@@ -78,9 +78,9 @@ export const POSTS = [
         ],
     },
     {
-        imageUrl: '',
+        imageUrl: 'https://admissions.umich.edu/sites/default/files/styles/content_area/public/091317_engin_josephxu_0.jpg?itok=XnUV5zUW',
         user: USERS[4].user,
-        likes: 1291823,
+        likes: 29823,
         caption: 'North Campus on a Wednesday ☀️',
         profile_picture: USERS[4].image,
         comments: [
