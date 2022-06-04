@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
-import { Users } from '../../data/users' 
+import { USERS } from '../../data/users' 
 
 const Stories = () => {
   return (
@@ -9,7 +9,7 @@ const Stories = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
         > 
-            {Users.map((story, index) => (
+            {USERS.map((story, index) => (
                 <View key={index} style={{ alignItems: 'center' }}>
                     <Image 
                         source={{uri: story.image}}
