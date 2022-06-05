@@ -3,8 +3,8 @@ import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import BottomTabs, { bottomTabIcons } from '../components/home/BottomTabs';
 import Header from '../components/home/Header';
 import Post from '../components/home/Post';
-import Stories from '../components/home/Stories';
 import { POSTS } from '../data/posts'
+import Stories from '../components/home/Stories';
 
 const HomeScreen = () => {
     return (
