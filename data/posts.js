@@ -5,7 +5,7 @@ export const POSTS = [
         imageUrl: 'https://d.newsweek.com/en/full/1151055/reshiram-zekrom-distribution-pokemon.jpg?w=1600&h=1600&q=88&f=aa83d550fd026741a14c714d0a08b80e',
         user: USERS[0].user,
         likes: 56852,
-        caption: 'Whats your favorite one growing up?',
+        caption: 'Whats your favorite legendary dragon from Pokemon Black and White growing up? #ThrowbackThursday',
         profile_picture: USERS[0].image,
         comments: [
             {
@@ -39,7 +39,7 @@ export const POSTS = [
         imageUrl: 'https://thumbs.dreamstime.com/z/saint-petersburg-russia-may-logo-all-national-football-league-teams-nfl-team-icons-set-all-new-football-teams-logos-vector-217811703.jpg',
         user: USERS[2].user,
         likes: 291823,
-        caption: 'Superbowl Picks?',
+        caption: '32 Teams. One goal. What are your guys picks for Super Bowl LVII? Leave them down in the comments below!',
         profile_picture: USERS[2].image,
         comments: [
             {
@@ -64,7 +64,7 @@ export const POSTS = [
         imageUrl: 'https://m.media-amazon.com/images/I/61i8Vjb17SL.jpg',
         user: USERS[3].user,
         likes: 1291823,
-        caption: 'iPhone.',
+        caption: 'This is iPhone 13 Pro.',
         profile_picture: USERS[3].image,
         comments: [
             {
