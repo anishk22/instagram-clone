@@ -1,14 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as Yup from 'yup'
-import { formik } from 'formik'
-import { View, Text } from 'react-native'
+import { Formik } from 'formik'
+import { View, Text, Image, TextInput, Button } from 'react-native'
+import { Divider } from 'react-native-elements'
+
+const placeholder_img = 'https://media.mixbook.com/images/templates/97_1_0_m.jpg'
 
 const FormikPostUploader = () => {
-  return (
-    <View>
-      <Text style={{ color: 'white' }}>FORMIK</Text>
-    </View>
-  )
+    const [thumbnailUrl, setThumbnailUrl] = useState(placeholder_img)
+
+    return (
+        <Formik
+            initialValues={{imageUrl: '', caption: ''}}
+            onSubmit={(values) => console.log(values)}
+            validationSchema={uploadPostSchema}
+            validateOnMount={true}
+        >
+            {({ handleBlur, handleChange, handleSubmit, values, errors, isValid }) => (
+                <>
+                    <View style={{ margin: 15, justifyContent: 'space-between', flexDirection: 'row' }}>
+                        <Image 
+                            source={{ uri: thumbnailUrl ? thumbnailUrl : placeholder_img }} 
+                            style={{ width: 100, height: 100 }}
+                        />
+
+                        <View style={{ flex: 1, marginLeft: 14 }}>
+                            <TextInput 
+                                style={{ color: 'white', fontSize: 18 }}
+                                placeholder='Write a caption...' 
+                                placeholderTextColor='gray' 
+                                multiline={true}
+                                onChangeText={handleChange('caption')}
+                                onBlur={handleBlur('caption')}
+                                value={values.caption}
+                            />
+                        </View>
+                    </View>
+
+                    <Divider width={0.2} orientation={'vertical'} />
+
+                    <TextInput 
+                        style={{ color: 'white', fontSize: 16, marginTop: 5, marginLeft: 5 }}
+                        placeholder='Enter image URL' 
+                        placeholderTextColor='gray'
+                        onChangeText={handleChange('imageUrl')}
+                        onBlur={handleBlur('imageUrl')}
+                        value={values.imageUrl}
+                        onChange={e => setThumbnailUrl(e.nativeEvent.text)}
+                    />  
+                    {errors.imageUrl && (
+                        <Text style={{ fontSize: 10, color: 'red', marginTop: 2, marginLeft: 5 }}>
+                            {errors.imageUrl}
+                        </Text>
+                    )}
+
+                    <Button onPress={handleSubmit} title='Share' disabled={!isValid} />
+                </>
+            )}
+            
+        </Formik>
+    )
 }
 
 const uploadPostSchema = Yup.object().shape({
