@@ -26,7 +26,7 @@ const PostHeader = ({ post }) => (
     <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin: 5,
+        margin: 8,
         alignItems: 'center',
     }}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>

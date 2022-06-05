@@ -40,7 +40,7 @@ const FormikPostUploader = () => {
                     <Divider width={0.2} orientation={'vertical'} />
 
                     <TextInput 
-                        style={{ color: 'white', fontSize: 16, marginTop: 5, marginLeft: 5 }}
+                        style={{ color: 'white', fontSize: 16, marginTop: 10, marginLeft: 10 }}
                         placeholder='Enter image URL' 
                         placeholderTextColor='gray'
                         onChangeText={handleChange('imageUrl')}
@@ -49,7 +49,7 @@ const FormikPostUploader = () => {
                         onChange={e => setThumbnailUrl(e.nativeEvent.text)}
                     />  
                     {errors.imageUrl && (
-                        <Text style={{ fontSize: 10, color: 'red', marginTop: 2, marginLeft: 5 }}>
+                        <Text style={{ fontSize: 10, color: 'red', marginTop: 5, marginLeft: 10, marginBottom: 20}}>
                             {errors.imageUrl}
                         </Text>
                     )}

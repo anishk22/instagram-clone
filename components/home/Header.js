@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        width: 100,
+        width: 120,
         height: 50,
         resizeMode: 'contain',
     },
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     icon: {
         width: 30,
         height: 30,
-        marginLeft: 10,
+        marginLeft: 15,
         resizeMode: 'contain',
     },
 
