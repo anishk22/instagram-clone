@@ -3,16 +3,22 @@ import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { View, Text, Image, TextInput, Button } from 'react-native'
 import { Divider } from 'react-native-elements'
+import validUrl from 'valid-url'
 
 const placeholder_img = 'https://media.mixbook.com/images/templates/97_1_0_m.jpg'
 
-const FormikPostUploader = () => {
+const FormikPostUploader = ({ navigation }) => {
     const [thumbnailUrl, setThumbnailUrl] = useState(placeholder_img)
 
     return (
         <Formik
             initialValues={{imageUrl: '', caption: ''}}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={values => {
+                console.log(values)
+                console.log('Your post was submitted successfully!')
+                navigation.goBack() 
+            }}
+
             validationSchema={uploadPostSchema}
             validateOnMount={true}
         >
@@ -20,7 +26,11 @@ const FormikPostUploader = () => {
                 <>
                     <View style={{ margin: 15, justifyContent: 'space-between', flexDirection: 'row' }}>
                         <Image 
-                            source={{ uri: thumbnailUrl ? thumbnailUrl : placeholder_img }} 
+                            source={{ uri: 
+                                validUrl.isUri(thumbnailUrl) 
+                                ? thumbnailUrl 
+                                : placeholder_img 
+                            }} 
                             style={{ width: 100, height: 100 }}
                         />
 
