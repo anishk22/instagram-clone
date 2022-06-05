@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Divider } from 'react-native-elements';
 
 const Header = ({ navigation }) => {
     return (
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         marginHorizontal: 20,
+        marginBottom: 5,
     },
 
     iconsContainer: {
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
     unreadBadge: {
         backgroundColor: '#FF3250',
         position: 'absolute',
-        left: 20,
+        left: 25,
         bottom: 18,
         width: 25,
         height: 18,

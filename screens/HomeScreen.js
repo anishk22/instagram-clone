@@ -10,9 +10,10 @@ const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style ={styles.container}>
             <Header navigation={navigation} />
-            <Stories />
-            
+
             <ScrollView>
+                <Stories />
+
                 {POSTS.map((post, index) => (
                     <Post post={post} key={index}/>
                 ))}

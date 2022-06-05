@@ -72,17 +72,17 @@ const PostFooter = ({ post }) => (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <View style={styles.leftFooterIconsContainer}>
             <Icon 
-                imgStyle={styles.footerIcon} 
+                imgStyle={[styles.footerIcon, styles.leftFooterIcons]} 
                 imgUrl={postFooterIcons[0].imageUrl} 
             />
 
             <Icon 
-                imgStyle={styles.footerIcon} 
+                imgStyle={[styles.footerIcon, styles.leftFooterIcons]} 
                 imgUrl={postFooterIcons[1].imageUrl} 
             />
 
             <Icon 
-                imgStyle={[styles.footerIcon, styles.shareIcon]} 
+                imgStyle={[styles.footerIcon, styles.leftFooterIcons, styles.shareIcon]} 
                 imgUrl={postFooterIcons[2].imageUrl} 
             />
         </View>
@@ -181,14 +181,19 @@ const styles = StyleSheet.create({
     },
 
     footerIcon: {
-        width: 33,
-        height: 33,
+        width: 30,
+        height: 30,
+    },
+
+    leftFooterIcons: {
+        marginRight: 15,
     },
 
     leftFooterIconsContainer: {
         flexDirection: 'row',
         width: '32%',
         justifyContent: 'space-between',
+        marginBottom: 10
     },
 
     shareIcon: {

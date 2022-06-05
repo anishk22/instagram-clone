@@ -4,7 +4,7 @@ import { USERS } from '../../data/users'
 
 const Stories = () => {
   return (
-    <View style={{marginBottom: 13}}>  
+    <View style={{marginBottom: 13, marginLeft: 8}}>  
         <ScrollView 
             horizontal
             showsHorizontalScrollIndicator={false}
